@@ -37,11 +37,9 @@ rock-paper-scissors-game-java/
 └── rockPaperScissors/
 └── RpsGame.java
 
-yaml
-Copy code
 
 - **README.md** → Project documentation  
-- **.gitignore** → Files to ignore in Git (e.g., compiled files, IDE configs)  
+- **.gitignore** → Files to ignore in Git (compiled files, IDE configs, system files)  
 - **src/** → Source code folder  
 - **RpsGame.java** → Main Java program  
 
@@ -50,20 +48,15 @@ Copy code
 ## How to Run
 
 1. Open a terminal and navigate to the project directory:
-
-```bash
 cd ~/Desktop/rock-paper-scissors-game-java
-Compile the Java program:
 
-bash
-Copy code
+2. Compile the Java program:
 javac src/rockPaperScissors/RpsGame.java
-Run the game:
 
-bash
-Copy code
+3. Run the game:
 java -cp src rockPaperScissors.RpsGame
-Gameplay Instructions
+
+## Gameplay Instructions
 When prompted, enter one of the following:
 
 r → Rock
@@ -84,9 +77,8 @@ Loss → -1 point
 
 After each round, choose whether to play again by typing yes or no.
 
-Example Output
-yaml
-Copy code
+## Example Output:
+
 Enter your move: (r / p / s) r
 Computer choice: paper
 You lose!
@@ -98,12 +90,8 @@ You win!
 
 Total score: 2
 Bye! Have a good day!
-License
+
+## License
 This project is open-source and free to use.
 
-yaml
-Copy code
-
 ---
-
-
