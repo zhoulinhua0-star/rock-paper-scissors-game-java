@@ -6,7 +6,7 @@ A console-based Rock Paper Scissors game written in Java, designed to demonstrat
 
 ## Project Overview
 
-This project is a simple console game where the player competes against the computer in Rock Paper Scissors. The game supports multiple rounds and keeps track of the player's score.
+This project is a console game where the player competes against the computer in Rock Paper Scissors. The game supports multiple rounds and keeps track of the player's score.
 
 - **Language**: Java  
 - **Type**: Console application  
