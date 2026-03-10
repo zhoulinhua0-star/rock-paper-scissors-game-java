@@ -1,4 +1,4 @@
-# Rock Paper Scissors (Java)
+# Rock Paper Scissors Game
 
 A console-based Rock Paper Scissors game written in Java, designed to demonstrate basic Java programming, input validation, control flow, and simple score tracking.
 
