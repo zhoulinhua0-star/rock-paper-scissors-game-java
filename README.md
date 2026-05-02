@@ -10,7 +10,15 @@ This project is a console game where the player competes against the computer in
 
 - **Language**: Java  
 - **Type**: Console application  
-- **Purpose**: Practice Java fundamentals, user input handling, and conditional logic
+- **Purpose**: Practice Java fundamentals, user input handling, and conditional logic  
+
+This repository also includes a **browser version** under [`rock-paper-scissors-web/`](rock-paper-scissors-web/).
+
+---
+
+## Play online · Web version
+
+Open the [**GitHub Pages site**](https://zhoulinhua0-star.github.io/rock-paper-scissors-game-java/) to play Rock Paper Scissors in the browser (same scoring rules as the Java game). Hosting is wired through **GitHub Actions** ([workflow](.github/workflows/deploy-pages.yml)). If the page is empty on first clone, enable **Settings → Pages → Source: GitHub Actions** on GitHub and ensure the workflow has run successfully on `main`.
 
 ---
 
@@ -33,15 +41,20 @@ This project is a console game where the player competes against the computer in
 rock-paper-scissors-game-java/
 ├── README.md
 ├── .gitignore
-└── src/
-└── rockPaperScissors/
-└── RpsGame.java
-
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml   → builds GitHub Pages from the web folder
+├── rock-paper-scissors-web/   → static HTML/CSS/JS game (+ its own README)
+├── src/
+│   └── rockPaperScissors/
+│       └── RpsGame.java
+└── …
 
 - **README.md** → Project documentation  
 - **.gitignore** → Files to ignore in Git (compiled files, IDE configs, system files)  
-- **src/** → Source code folder  
-- **RpsGame.java** → Main Java program  
+- **src/** → Java source (`RpsGame.java` — console entry point)  
+- **rock-paper-scissors-web/** → Browser counterpart (parity rules with Java)  
+
 
 ---
 

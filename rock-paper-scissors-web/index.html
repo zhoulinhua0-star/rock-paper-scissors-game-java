@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter Duel — Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="arena" id="arena" tabindex="-1" aria-labelledby="game-title">
+    <header class="arena__masthead">
+      <p class="arena__badge">Late shift · Console rules</p>
+      <h1 class="arena__title" id="game-title">Counter Duel</h1>
+      <p class="arena__subtitle">One pick each. Random house. Tie +1 · Win +2 · Loss −1</p>
+      <aside class="shortcuts-capsule" aria-label="Keyboard shortcuts">
+        <strong class="shortcuts-capsule__label">Shortcuts</strong>
+        <span class="shortcut"><kbd>R</kbd> Rock</span>
+        <span class="shortcut"><kbd>P</kbd> Paper</span>
+        <span class="shortcut"><kbd>S</kbd> Scissors</span>
+        <span class="shortcut"><kbd>Y</kbd> / <kbd>Enter</kbd> Play again</span>
+        <span class="shortcut"><kbd>N</kbd> / <kbd>Esc</kbd> Quit</span>
+      </aside>
+    </header>
+
+    <section class="hud" aria-label="Scores and recap">
+      <div class="hud__stripe">
+        <div class="hud__score" aria-live="polite">
+          <span class="hud__label">Session score</span>
+          <span class="hud__value" id="score-value">0</span>
+        </div>
+      </div>
+      <dl class="hud__last" aria-label="Last round">
+        <div class="hud__pair">
+          <dt>You</dt>
+          <dd id="last-player">—</dd>
+        </div>
+        <div class="hud__divider" aria-hidden="true"></div>
+        <div class="hud__pair">
+          <dt>House</dt>
+          <dd id="last-house">—</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="duelist" aria-label="Match area">
+      <div class="duelist__ring" id="battle-ring">
+        <article class="card card--you" aria-label="Your last pick">
+          <span class="card__tag">You</span>
+          <div class="card__glyph" id="glyph-you" aria-hidden="true"></div>
+          <p class="card__label" id="label-you">Choose</p>
+        </article>
+
+        <div class="versus" aria-hidden="true"><span>V</span><span>S</span></div>
+
+        <article class="card card--house" aria-label="House pick">
+          <span class="card__tag">House</span>
+          <div class="card__glyph card__glyph--mystery" id="glyph-house" aria-hidden="true">
+            <span class="pulse-dot"></span>
+          </div>
+          <p class="card__label" id="label-house">Awaiting seal</p>
+        </article>
+      </div>
+
+      <div class="moves-wrap">
+        <p class="moves-intro" id="moves-intro">Lock in your gesture</p>
+        <div class="moves" id="move-buttons">
+          <button type="button" class="move" data-move="rock" aria-describedby="moves-intro">
+            <span class="move__glyph" aria-hidden="true"><svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M10 54c14-34 42-42 42-42s2 34-42 42z"/><circle cx="41" cy="18" r="6" fill="var(--surface)"/></svg></span>
+            Rock
+          </button>
+          <button type="button" class="move" data-move="paper" aria-describedby="moves-intro">
+            <span class="move__glyph" aria-hidden="true"><svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M8 12h30l18 42H12L8 12z"/><path fill="var(--surface)" opacity=".35" d="M16 20h18l14 34H21L16 20z"/></svg></span>
+            Paper
+          </button>
+          <button type="button" class="move" data-move="scissors" aria-describedby="moves-intro">
+            <span class="move__glyph" aria-hidden="true"><svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" d="M10 54l18-42M54 54L36 12"/><circle cx="32" cy="36" r="7" fill="currentColor"/></svg></span>
+            Scissors
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="verdict-slot">
+      <p class="sr-announce" id="sr-announcement" aria-live="polite" aria-atomic="true"></p>
+      <p class="verdict-slot__muted" id="status-line">Deal your move—the house waits in the violet void.</p>
+      <p class="verdict" id="verdict-headline" hidden></p>
+      <p class="verdict-slot__hint" id="score-hint" hidden></p>
+    </div>
+
+    <footer class="round-actions round-actions--hidden" id="round-actions">
+      <button type="button" class="cta cta--primary" id="btn-again">Play again</button>
+      <button type="button" class="cta cta--ghost" id="btn-quit">Quit duel</button>
+    </footer>
+  </main>
+
+  <div class="epilogue epilogue--hidden" id="epilogue" role="dialog" aria-modal="true" aria-labelledby="bye-title">
+    <div class="epilogue__panel">
+      <p class="epilogue__ribbon">Counter closed</p>
+      <h2 class="epilogue__title" id="bye-title">Thanks for sticking around.</h2>
+      <p class="epilogue__score">Final tally on the board: <span id="final-score">0</span></p>
+      <p class="epilogue__farewell">Warm lights, sharper instincts next time.</p>
+      <button type="button" class="cta cta--primary" id="btn-restart">Open counter again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

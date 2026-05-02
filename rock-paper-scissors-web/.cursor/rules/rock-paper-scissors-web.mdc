@@ -1,0 +1,26 @@
+---
+description: Vanilla web RPS — parity with Java console scoring, accessible UI, scoped edits
+globs: "**/*.html,**/*.css,**/*.js,README.md"
+alwaysApply: false
+---
+
+# Rock Paper Scissors — web project conventions
+
+## Stack
+
+- Ship the game as **`index.html`**, **`style.css`**, and **`script.js`** at the project root unless the README explicitly adds a build step.
+- Prefer standards-based APIs and minimal dependencies.
+
+## Behavior (parity)
+
+- Preserve the documented rules in `README.md`: random computer choice, tie +1 / win +2 / loss −1, play-again loop, final score on exit.
+- Keep JavaScript easy to reason about: prefer named functions and clear separation of “pick outcome”, “update score”, and “UI refresh” concerns.
+
+## UX and accessibility
+
+- Support both pointer and keyboard use for choosing moves and confirming “play again” / quit.
+- Expose round result, computer choice, and running score in the page—do not rely on the developer console for normal play.
+
+## Scope
+
+- Make small, purposeful changes; avoid refactoring unrelated repositories (including the sibling Java project) when working in this folder unless the user asks.
