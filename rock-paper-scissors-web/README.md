@@ -4,7 +4,7 @@
 
 This folder is for a browser-based Rock Paper Scissors experience: **pure HTML, CSS, and JavaScript** at the project root (`index.html`, `style.css`, `script.js`)—no bundler or framework unless this document deliberately says otherwise.
 
-## Play live · 在线试玩
+## Play live
 
 **Stable site (GitHub Pages):** [https://zhoulinhua0-star.github.io/rock-paper-scissors-game-java/](https://zhoulinhua0-star.github.io/rock-paper-scissors-game-java/) — open in any modern browser; no install. This URL tracks the `main` branch via the repo’s **Deploy web game to GitHub Pages** workflow.
 
